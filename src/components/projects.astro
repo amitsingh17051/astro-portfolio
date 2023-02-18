@@ -1,0 +1,77 @@
+---
+const projects = [
+    {
+        "projectTypeText" : "Figma Design",
+        "projectNameText" : "Task Manager",
+        "projectDescText" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, culpa.",
+        "projectHrefUrl" : "https://www.figma.com/file/f0WlV6pnOD1mEv6w9K2o2F/Untitled?node-id=0%3A1&t=0MWFjyDMJqpE8Lef-1",
+        "projectHrefUrlText" : "View Design",
+        "projectImgUrl" : "/assets/task-manager.png",
+
+    },
+    {
+        "projectTypeText" : "Movie Ticket Booking Website",
+        "projectNameText" : "victorycinema.in",
+        "projectDescText" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, culpa.",
+        "projectHrefUrl" : "https://victorycinema.in/",
+        "projectHrefUrlText" : "View Website",
+        "projectImgUrl" : "/assets/victorycineam.png",
+
+    }
+   
+];
+---
+
+
+<section class="projects" id="portfolio">
+    <div class="container">
+       
+        {projects.map((project, index) => (
+            <>
+                <div class={`single-project project-${index}`}>
+                    <div class="row">
+
+                        <div class="col-md-6 text-wrap">
+                            <h4 class="text-warning">{project.projectTypeText}</h4>
+                            <h1>{project.projectNameText}</h1>
+                            <p>{project.projectDescText}</p>
+                            <a target="_blank" href={project.projectHrefUrl}>{project.projectHrefUrlText}</a>
+                        </div>
+
+                        <div class="col-md-6 img-wrap">
+                            <img src={project.projectImgUrl} alt="">
+                        </div>
+                    </div>
+                </div>
+            </>
+        ))}
+
+    </div>
+</section>
+
+<style>
+
+    .single-project {
+        padding:20px;
+        margin-bottom:250px;
+    }
+    .single-project .row{
+        display: flex;
+        align-items: center;
+    }
+    .single-project h1{
+       font-size: 45px;
+       font-weight: 900;
+    }
+    .single-project p{
+       font-size: 16x;
+    }
+
+    .single-project img{
+       width: 100%;
+    }
+
+    .projects {
+        margin-top:100px;
+    }
+</style>
